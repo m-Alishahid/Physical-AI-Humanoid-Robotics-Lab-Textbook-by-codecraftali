@@ -40,11 +40,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          path: './docs/module-1-ros2',
+          routeBasePath: '/module-1-ros2',
+          sidebarPath: './docusaurus-module1-ros2-sidebars.ts',
         },
         blog: {
           showReadingTime: true,
@@ -83,7 +81,7 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'module1Ros2Sidebar',
           position: 'left',
           label: 'Tutorial',
         },

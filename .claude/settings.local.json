@@ -12,7 +12,9 @@
       "Bash(npx create-docusaurus@latest:*)",
       "Bash(git --version)",
       "Bash(git rev-parse:*)",
-      "Bash(git remote:*)"
+      "Bash(git remote:*)",
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
     ],
     "deny": [],
     "ask": []
