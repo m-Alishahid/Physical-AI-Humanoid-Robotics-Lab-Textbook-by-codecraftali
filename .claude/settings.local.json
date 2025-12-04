@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(ls:*)",
+      "Bash(git checkout:*)",
+      "Bash(mkdir:*)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Bash(pwsh -Command:*)",
+      "WebSearch",
+      "Bash(powershell.exe -Command:*)",
+      "Bash(npx create-docusaurus@latest:*)",
+      "Bash(git --version)",
+      "Bash(git rev-parse:*)",
+      "Bash(git remote:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
