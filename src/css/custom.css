@@ -1,30 +1,164 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* Light Glowing Purple Theme for Robotics Textbook */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary Purple Colors */
+  --ifm-color-primary: #8a2be2;
+  --ifm-color-primary-dark: #7a1ed8;
+  --ifm-color-primary-darker: #721bd0;
+  --ifm-color-primary-darkest: #5d16ab;
+  --ifm-color-primary-light: #9a3de9;
+  --ifm-color-primary-lighter: #a249eb;
+  --ifm-color-primary-lightest: #b970f0;
+
+  /* Light theme background */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8f9fa;
+
+  /* Code blocks */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-code-padding-horizontal: 0.4rem;
+  --ifm-code-padding-vertical: 0.2rem;
+
+  /* Custom variables */
+  --glow-effect: rgba(138, 43, 226, 0.15);
+  --shadow-light: rgba(138, 43, 226, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode adjustments */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #9d4edd;
+  --ifm-color-primary-dark: #8f3fd1;
+  --ifm-color-primary-darker: #8739cc;
+  --ifm-color-primary-darkest: #702fa8;
+  --ifm-color-primary-light: #ab5de3;
+  --ifm-color-primary-lighter: #b169e5;
+  --ifm-color-primary-lightest: #c48eed;
+  --ifm-background-color: #0a0a1a;
+  --ifm-background-surface-color: #151530;
+  --glow-effect: rgba(157, 78, 221, 0.25);
+  --shadow-light: rgba(157, 78, 221, 0.2);
+}
+
+/* Glowing Navigation Bar */
+.navbar {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f5ff 100%);
+  box-shadow: 0 4px 20px var(--shadow-light);
+  border-bottom: none;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .navbar {
+  background: linear-gradient(135deg, #151530 0%, #0a0a1a 100%);
+}
+
+.navbar__title {
+  font-weight: 700;
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px var(--glow-effect);
+}
+
+[data-theme='dark'] .navbar__title {
+  background: linear-gradient(90deg, #9d4edd, #e0b0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing buttons and links */
+.navbar__link, .menu__link {
+  transition: all 0.3s ease;
+}
+
+.navbar__link:hover, .menu__link:hover {
+  color: var(--ifm-color-primary);
+  text-shadow: 0 0 10px var(--glow-effect);
+  transform: translateY(-2px);
+}
+
+/* Glowing sidebar items */
+.menu__link--active {
+  background: var(--glow-effect);
+  border-left: 4px solid var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Purple glow cards */
+.robotics-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f5ff 100%);
+  border: 1px solid var(--shadow-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 5px 15px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.robotics-card:hover {
+  box-shadow: 0 8px 25px var(--glow-effect);
+  transform: translateY(-5px);
+}
+
+[data-theme='dark'] .robotics-card {
+  background: linear-gradient(135deg, #151530 0%, #1a1a35 100%);
+  border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+/* Code blocks with purple glow */
+.prism-code {
+  border-radius: 8px;
+  border-left: 4px solid var(--ifm-color-primary);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+/* Footer with subtle glow */
+.footer {
+  background: linear-gradient(135deg, #f9f5ff 0%, #f0e6ff 100%);
+  border-top: 1px solid var(--shadow-light);
+  box-shadow: 0 -5px 20px var(--shadow-light);
+}
+
+[data-theme='dark'] .footer {
+  background: linear-gradient(135deg, #151530 0%, #0a0a1a 100%);
+  border-top: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+/* Glowing section headers */
+h1, h2, h3 {
+  position: relative;
+}
+
+h1::after, h2::after, h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), transparent);
+  border-radius: 2px;
+}
+
+/* Purple glow for active tabs */
+.tabs__item--active {
+  color: var(--ifm-color-primary);
+  border-bottom: 3px solid var(--ifm-color-primary);
+  text-shadow: 0 0 8px var(--glow-effect);
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .navbar__title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation for glowing effect */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--glow-effect); }
+  50% { box-shadow: 0 0 30px var(--glow-effect); }
+}
+
+.highlight-card {
+  animation: pulse-glow 3s infinite;
 }

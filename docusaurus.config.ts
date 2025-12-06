@@ -1,150 +1,89 @@
-import {themes as prismThemes} from 'prism-react-renderer';
+import {themes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
-
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
+  title: '🤖 Physical AI & Humanoid Robotics Lab Textbook',
+  tagline: 'Master ROS 2, Digital Twins, NVIDIA Isaac & Humanoid AI Systems',
+  favicon: 'img/favicon.svg',
+  url: 'https://codecraftali.github.io',
+  baseUrl: '/Physical-AI-Humanoid-Robotics-Lab-Textbook-by-codecraftali/',
+  organizationName: 'codecraftali',
+  projectName: 'Physical-AI-Humanoid-Robotics-Lab-Textbook-by-codecraftali',
   onBrokenLinks: 'throw',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
-
+  onBrokenMarkdownLinks: 'warn',
+  i18n: {defaultLocale: 'en', locales: ['en']},
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: 'docs',
+          path: 'docs',
+          showLastUpdateTime: true,
+          editUrl: 'https://github.com/codecraftali/Physical-AI-Humanoid-Robotics-Lab-Textbook-by-codecraftali/edit/main/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        theme: {
-          customCss: './src/css/custom.css',
-        },
-      } satisfies Preset.Options,
+        blog: false,
+        theme: {customCss: './src/css/custom.css'},
+      },
     ],
   ],
-
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      title: '🤖 Physical AI & Humanoid Robotics',
+      logo: {alt: 'Robot Logo', src: 'img/logo.svg'},
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          type: 'doc',
+          docId: 'index', // The ID of the doc to link to (your intro page)
           position: 'left',
-          label: 'Tutorial',
+          label: '📚 Textbook',
+        
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {href: 'https://github.com/codecraftali/Physical-AI-Humanoid-Robotics-Lab-Textbook-by-codecraftali', label: 'GitHub', position: 'right'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Textbook',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            {label: 'Introduction', to: '/docs'},
+            {label: 'Setup Guides', to: '/docs/digital-twin-workstation'},
+            {label: 'Module 1: ROS 2', to: '/docs/chapter1-introduction-to-ros2'},
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {label: 'ROS 2 Docs', href: 'https://docs.ros.org'},
+            {label: 'NVIDIA Isaac', href: 'https://developer.nvidia.com/isaac'},
+            {label: 'Digital Twin Guide', href: 'https://www.autodesk.com/solutions/digital-twin'},
           ],
         },
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            {label: 'GitHub', href: 'https://github.com/codecraftali'},
+            {label: 'Discord', href: 'https://discord.gg/robotics'},
+            {label: 'Contact', href: 'mailto:contact@example.com'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Lab Textbook. All rights reserved.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: themes.dracula,
+      additionalLanguages: ['python', 'cpp', 'bash', 'yaml', 'json', 'docker'],
     },
-  } satisfies Preset.ThemeConfig,
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+  },
 };
 
 export default config;
