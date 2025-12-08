@@ -11,7 +11,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Module 1: ROS 2 Foundations',
+    title: 'Module 1: ROS 2 Fundamentals',
     icon: '🤖',
     description: (
       <>
@@ -22,8 +22,8 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Module 2: Digital Twins & Simulation',
-    icon: '🖥️',
+    title: 'Module 2: Digital Twins',
+    icon: '🔄',
     description: (
       <>
         Create virtual replicas of physical systems. Learn URDF modeling,
@@ -33,7 +33,18 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Module 3: Physical AI & VLA Models',
+    title: 'Module 3: NVIDIA Isaac',
+    icon: '🎮',
+    description: (
+      <>
+        Dive into NVIDIA's robotics simulation platform. Master Isaac Sim,
+        Isaac Gym, and Sim2Real pipelines. Build and train AI models in
+        photorealistic virtual environments before deploying to physical robots.
+      </>
+    ),
+  },
+  {
+    title: 'Module 4: VLA & Humanoids',
     icon: '🧠',
     description: (
       <>
@@ -47,9 +58,11 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, icon, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
-        <span className={styles.featureIcon} role="img">{icon}</span>
+        <div className={styles.featureIcon} role="img" aria-label={title}>
+          {icon}
+        </div>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

@@ -66,9 +66,9 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {label: 'GitHub', href: 'https://github.com/codecraftali'},
-            {label: 'Discord', href: 'https://discord.gg/robotics'},
-            {label: 'Contact', href: 'mailto:contact@example.com'},
+            {label: 'GitHub', href: 'https://github.com/m-Alishahid', icon: 'FaGithub'},
+            {label: 'LinkedIn', href: 'https://pk.linkedin.com/in/muhammad-ali-shahid-2a9244366', icon: 'FaLinkedin'},
+            {label: 'Instagram', href: 'https://www.instagram.com/codecraftali/', icon: 'FaInstagram'},
           ],
         },
       ],
